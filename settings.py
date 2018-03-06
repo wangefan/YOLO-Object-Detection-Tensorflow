@@ -1,5 +1,9 @@
 classes_name =  ["aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
-classes_no = [i for i in xrange(len(classes_name))]
+
+# 根據classes_name建立index classes_no = [0, 1,....]
+classes_no = [i for i in range(len(classes_name))]
+
+# classes_dict = [{"aeroplane", 0}, {"bicycle", 1},...]
 classes_dict = dict(zip(classes_name, classes_no))
 num_class = len(classes_name)
 
