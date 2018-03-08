@@ -1,6 +1,6 @@
 import settings
 import model
-from utils import VOC
+from utils import DataSet
 import os
 import time
 import cv2
@@ -128,7 +128,7 @@ if settings.output == 1:
     read_image(image, settings.picture_name[-10:])
     
 if settings.output == 2:
-    labels = VOC('test').load_labels()
+    labels = DataSet('test').load_labels()
     for i in xrange(len(labels)):
         print labels[i]['imname']
         image = cv2.imread(labels[i]['imname'])

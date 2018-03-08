@@ -1,6 +1,9 @@
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), './'))
 import settings
-import model
-from utils import VOC
+import models
+from utils import DataSet
 import os
 import time
 import tensorflow as tf
@@ -8,8 +11,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import numpy as np
 
 sess = tf.InteractiveSession()
-model = model.Model()
-utils = VOC('train')
+model = models.Model()
+utils = DataSet('train')
 saver = tf.train.Saver(var_list = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope = 'yolo'))
 sess.run(tf.global_variables_initializer())
     

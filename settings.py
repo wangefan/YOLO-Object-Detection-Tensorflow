@@ -1,4 +1,4 @@
-classes_name =  ["aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "diningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"]
+classes_name =  ["license"]
 
 # 根據classes_name建立index classes_no = [0, 1,....]
 classes_no = [i for i in range(len(classes_name))]
@@ -9,7 +9,7 @@ num_class = len(classes_name)
 
 # got {normal, fast}
 # but if you change the type, u need to train first for atleast for few hours
-model_type = 'normal'
+model_type = 'fast'
 
 image_size = 448
 cell_size = 7
@@ -19,8 +19,9 @@ object_scale = 2.0
 no_object_scale = 1.0
 class_scale = 2.0
 coordinate_scale = 5.0
-flipped = True
-
+flipped = False
+data_set_path = '.\data\lpr_sq'
+cache_file_path = '.\data\cache'
 decay_step = 30000
 decay_rate = 0.1
 learning_rate = 0.0001
@@ -32,7 +33,7 @@ checkpoint = 1000
 # For main
 threshold = 0.2
 IOU_threshold = 0.5
-test_percentage = 0.99
+test_percentage = 0.1
 
 # 1 for read a picture
 # 2 to read from testing dataset
